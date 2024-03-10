@@ -1,5 +1,8 @@
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import cross_validate
+import numpy as np
+import matplotlib.pyplot as plt
 
 # Models
 from sklearn.feature_extraction.text import CountVectorizer
@@ -15,6 +18,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import SGDClassifier
+from sklearn.svm import LinearSVC
+
 
 # Model Metrics
 from sklearn.metrics import confusion_matrix
@@ -55,23 +62,13 @@ models = [
     lambda: KNeighborsClassifier(n_neighbors=15, weights='uniform'),
     lambda: GradientBoostingClassifier(n_estimators=100, learning_rate=0.01, max_depth=3, random_state=42),
     lambda: RandomForestClassifier(n_estimators=100, random_state=42),
-    lambda: MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=1000, random_state=42) # Neural Network
+    lambda: MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=1000, random_state=42), # Neural Network
     lambda: SVC(C=0.1, kernel='linear', probability=True), # Support Vector Machine
     lambda: LogisticRegression(penalty='l2'), # Linear Model with overfitting avoidance
     lambda: LinearSVC(penalty='l2'), # Linear Model with overfitting avoidance
 
     # Linear Model with stochastic gradient descent learning (loss function)
     lambda: SGDClassifier(loss='log', penalty='l2', alpha=0.001, max_iter=100, random_state=42)
-]
-
-models = [
-    
-    lambda: SVC(C=0.1, kernel='linear', probability=True),
-
-
-    lambda: DecisionTreeClassifier(),
-    
-    
 ]
 
 # ====================== SENTIMENT ANAYZER ======================
@@ -126,7 +123,6 @@ def train(model, x, y, split_size = 0.2, cross_count = 0):
         evaluate(y_test, y_pred)
     else:
         scores = cross_validate(model, x, y, scoring=['accuracy', 'precision_macro', 'recall_macro', 'f1_macro'], return_train_score=True)
-scores
         print(scores)
 
 def show_cm(cm):

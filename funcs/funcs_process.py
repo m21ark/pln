@@ -25,7 +25,7 @@ def spacy_pre_process(dataset, target_column):
     nlp = spacy.load("en_core_web_sm")
     corpus = []
 
-    for i in range(0, dataset[target_column].size):
+    for sentence in range(0, dataset[target_column].size):
         corpus.append(nlp(sentence))
 
     return corpus

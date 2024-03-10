@@ -2,13 +2,14 @@ from collections import defaultdict
 from nltk import ngrams
 import random
 
-def train_ngram(n = 5):
+
+def train_ngram(n = 5, corpus = []):
 
     # Create a placeholder for the model
     n_model = defaultdict(lambda: defaultdict(lambda: 0))
 
     # Count the frequency of each ngram
-    for sentence in reuters.sents():
+    for sentence in corpus:
         for w in range(2, n+1):
             for ngram in ngrams(sentence, n, pad_right=True, pad_left=True, left_pad_symbol='<s>', right_pad_symbol='</s>'):
                 n_model[ngram[:w-1]][ngram[w-1]] += 1
@@ -21,10 +22,10 @@ def train_ngram(n = 5):
 
     return n_model
 
-def ngram_guess_next(model, word_list):
+def ngram_guess_next(n_model, text):
     max(n_model[text], key=n_model[text].get)
                 
-def ngram_complete_sentence(model, text):
+def ngram_complete_sentence(n_model, text):
     while text[-1] != "</s>":
             
             # select a random probability threshold

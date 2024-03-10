@@ -30,7 +30,6 @@ REPRESENTACOES:
     
     EMBEDDINGS:
 
-    usar 1-hot enconding
     usar embeddings ja feitos (word2vec)
     usar nossos proprios embeddings --> fazer testes para ver se é bom com similaridade, doesnt match, queen/capital check ...
     --> experimentar com diferentes tamanhos de embeddings
