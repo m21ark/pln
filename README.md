@@ -16,7 +16,7 @@
 - Do MWE (multi-word expression tokenizer) detection and replace them with a single token
 - Do name entity recognition and replace them with a single token --> maybe should be done before the cleaning
 - Do POS tagging ?
-- Lemmatize + Stem is giving some strange results for some words
+- Lemmatize + Stem is giving some strange results for some words --> se calhar ver com prof se ate n é ma ideia usar os 2
 - Try the spacy processing pipeline
 - Explore alternatives for the negation handling
 
