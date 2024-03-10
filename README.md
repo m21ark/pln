@@ -20,26 +20,7 @@
 - Try the spacy processing pipeline
 - Explore alternatives for the negation handling
 
-### Representations
-
-    text --> tmb supostamente vai ser pessimo
-
-    custom--> podemos tentar fazer a nossa propria rep com base na exploracao
-
-    BOW model --> use countvectorizer
-    1-HOT --> mto lixo mas pronto
-    tf-idf
-
-    NGRAMS:
-        usar diferentes tamanhos
-    
-    EMBEDDINGS:
-
-    usar embeddings ja feitos (word2vec)
-    usar nossos proprios embeddings --> fazer testes para ver se é bom com similaridade, doesnt match, queen/capital check ...
-    --> experimentar com diferentes tamanhos de embeddings
-
-    usar append, max embedding (max should be better) aggregators
+### MODELOS
 
 REGULARIZATION --> technique para evitar overfitting by penalizing excessive feature weights:
 
