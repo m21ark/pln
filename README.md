@@ -2,46 +2,38 @@
 
 ## TODO
 
-### Explore
+### Explore --> JONY
 
 - fazer word clouds com base no tf-idf em vez de ser com base em frequencia
-- ver se ha correlacao entre palavras de negacao com sentimentos negativos
 - ver se ha correlacao de uso de CAPS com sentimentos de raiva por ex
-- ver ratio de palavras negativas/positivas em cada review e ver se ha correlacao com sentimentos
-- ver ration de palavras com conatacao positiva e negativa no dataset e ver se ha alguma trend interessante
+- ver ratio de palavras negativas/positivas em cada review e ver se ha correlacao com sentimentos --> vader
 
 ### PRE-PROCESS
 
-- Do spell check and fix words
-- Do MWE (multi-word expression tokenizer) detection and replace them with a single token
+- Apply a basic tokenizer + Do MWE (multi-word expression tokenizer)
 - Do name entity recognition and replace them with a single token --> maybe should be done before the cleaning
-- Do POS tagging ?
-- Lemmatize + Stem is giving some strange results for some words --> se calhar ver com prof se ate n é ma ideia usar os 2
-- Try the spacy processing pipeline
+- experimentar com stemming ou lemma. os 2 juntos em principo da asneira
+
+- Try the spacy processing pipeline as comparison to our own
 - Explore alternatives for the negation handling
 
 ### MODELOS
 
-REGULARIZATION --> technique para evitar overfitting by penalizing excessive feature weights:
-
-    Logistical regression supports L1,L2 (default) regularizations as hyperparamters:
-            clf = LogisticRegression(penalty='l2')  
-            
-            L1 dá mais sparse, podemos usar mix de L1, L2 em diferentes qntd
-            
-            clf_l1 = LogisticRegression(penalty='l1', solver='saga')    
-            clf_mix = LogisticRegression(penalty='elasticnet', solver='saga', l1_ratio=0.5)
-
-            LinearSVC(penalty='l2') 
-
-            --> verificar numero de pesos não nulos 
-                num_nonzero_weights = np.count_nonzero(clf.coef_)
-                print("Number of non-zero weights:", num_nonzero_weights)
+- Do POS tagging ?
+- Trainar o nosso embedding a 100% dos dados
 
 TESTAR MODELOS COM APPROACH EM PARES E OUTRO COM 1 OUT OF 5 MOST LIKELY
+how to combine the word embedding into phrases (max, min, sum, multiply ...)
 
 ## Group
 
-- João Alves (up20200XXXX)
+- João Alves (up202007614)
 - Marco André (up202004891)
-- Rúben Monteiro (up20200XXXX)
+- Rúben Monteiro (up202006478)
+
+## Questions
+
+How to deal with negation? Is it really the best way to use not_.
+Perguntar se é boa ideia remover palavras com 2< chars.
+Do spell check and fix words?
+How to train with rep of POS
