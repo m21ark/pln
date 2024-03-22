@@ -1,12 +1,6 @@
-# PLN
+# PLN - Group J
 
 ## TODO
-
-### Explore --> JONY
-
-- fazer word clouds com base no tf-idf em vez de ser com base em frequencia
-- ver se ha correlacao de uso de CAPS com sentimentos de raiva por ex
-- ver ratio de palavras negativas/positivas em cada review e ver se ha correlacao com sentimentos --> vader
 
 ### PRE-PROCESS
 
@@ -20,7 +14,7 @@
 ### MODELOS
 
 - Do POS tagging ?
-- Trainar o nosso embedding a 100% dos dados
+- Treainar o nosso embedding a 100% dos dados
 
 TESTAR MODELOS COM APPROACH EM PARES E OUTRO COM 1 OUT OF 5 MOST LIKELY
 how to combine the word embedding into phrases (max, min, sum, multiply ...)
@@ -33,7 +27,7 @@ how to combine the word embedding into phrases (max, min, sum, multiply ...)
 
 ## Questions
 
-How to deal with negation? Is it really the best way to use not_.
-Perguntar se é boa ideia remover palavras com 2< chars.
-Do spell check and fix words?
-How to train with rep of POS
+How to deal with negation? Is it really the best way to use not_. --> talvez nem abordar a questao de negacao
+remover palavras com 1 char.
+How to train with rep of POS --> temos de definir as nossas proprias features e ter cuidado com a quantidade de tags q podem dar mto sparse
+maybe procurar embeddings pre treinados em tweets
