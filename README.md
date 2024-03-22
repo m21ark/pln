@@ -13,7 +13,7 @@
 
 ### MODELOS
 
-- Do POS tagging ?
+- Do POS tagging --> fica para dps se nos aptecer
 - Treainar o nosso embedding a 100% dos dados
 
 TESTAR MODELOS COM APPROACH EM PARES E OUTRO COM 1 OUT OF 5 MOST LIKELY
@@ -30,4 +30,11 @@ how to combine the word embedding into phrases (max, min, sum, multiply ...)
 How to deal with negation? Is it really the best way to use not_. --> talvez nem abordar a questao de negacao
 remover palavras com 1 char.
 How to train with rep of POS --> temos de definir as nossas proprias features e ter cuidado com a quantidade de tags q podem dar mto sparse
-maybe procurar embeddings pre treinados em tweets
+maybe procurar embeddings pre treinados em tweets:
+
+
+FastText: FastText is another popular library for word embeddings, developed by Facebook. It's known for its ability to handle out-of-vocabulary words by breaking them down into character n-grams. You can train FastText embeddings on a Twitter corpus to get tweet-specific embeddings.
+
+BERT: BERT (Bidirectional Encoder Representations from Transformers) is a state-of-the-art language representation model developed by Google. While BERT is primarily used for contextual embeddings at the sentence or document level, you can fine-tune pre-trained BERT models on Twitter data to get tweet embeddings.
+
+Tweet2Vec: Tweet2Vec is an embedding method specifically designed for tweets. It's based on paragraph vectors (Doc2Vec) but adapted for Twitter data. It captures the semantics of tweets by considering both the tweet text and the user who posted it.
