@@ -1,3 +1,5 @@
 data/reps/*
 .vscode
 data/data_spacy_processed.pkl
+cc.en.300.bin
+cc.en.300.bin.gz
